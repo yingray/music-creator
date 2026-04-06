@@ -1,17 +1,20 @@
 ---
-const currentPath = Astro.url.pathname;
+import { normalizePathname, withBase } from "../utils/paths";
+
+const currentPath = normalizePathname(Astro.url.pathname);
+const homeHref = normalizePathname(withBase("/"));
 
 const navItems = [
-  { href: "/", label: "Dashboard", icon: "home" },
-  { href: "/prompts/", label: "Prompts", icon: "music" },
-  { href: "/templates/", label: "Templates", icon: "layout" },
-  { href: "/tags/", label: "Tags", icon: "tag" },
+  { href: withBase("/"), label: "Dashboard", icon: "home" },
+  { href: withBase("/prompts/"), label: "Prompts", icon: "music" },
+  { href: withBase("/templates/"), label: "Templates", icon: "layout" },
+  { href: withBase("/tags/"), label: "Tags", icon: "tag" },
 ];
 ---
 
 <aside class="fixed top-0 left-0 w-64 h-screen bg-bg-secondary border-r border-border flex flex-col">
   <div class="p-6 border-b border-border">
-    <a href="/" class="flex items-center gap-3 group">
+    <a href={withBase("/")} class="flex items-center gap-3 group">
       <span class="text-2xl">♪</span>
       <div>
         <h1 class="text-lg font-bold text-text-primary group-hover:text-accent transition-colors">
@@ -24,8 +27,9 @@ const navItems = [
 
   <nav class="flex-1 p-4 space-y-1">
     {navItems.map((item) => {
-      const isActive = currentPath === item.href ||
-        (item.href !== "/" && currentPath.startsWith(item.href));
+      const itemPath = normalizePathname(item.href);
+      const isActive = currentPath === itemPath ||
+        (itemPath !== homeHref && currentPath.startsWith(`${itemPath}/`));
       return (
         <a
           href={item.href}

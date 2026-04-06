@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CopyButton from "../../components/CopyButton.astro";
 import { getCollection, render } from "astro:content";
+import { withBase } from "../../utils/paths";
 
 export async function getStaticPaths() {
   const templates = await getCollection("templates");
@@ -14,13 +15,14 @@ export async function getStaticPaths() {
 const { template } = Astro.props;
 const { Content } = await render(template);
 const { data } = template;
+const templatesHref = withBase("/templates/");
 ---
 
 <BaseLayout title={data.title}>
   <div class="max-w-3xl space-y-6">
     <div>
       <a
-        href="/templates/"
+        href={templatesHref}
         class="text-sm text-text-muted hover:text-accent transition-colors mb-4 inline-block"
       >
         ← Back to Templates
@@ -73,7 +75,7 @@ const { data } = template;
     <div class="flex flex-wrap gap-1.5">
       {data.tags.map((tag) => (
         <a
-          href={`/tags/${tag}/`}
+          href={withBase(`/tags/${tag}/`)}
           class="text-xs text-text-muted bg-bg-card border border-border px-2 py-0.5 rounded hover:text-accent transition-colors"
         >
           {tag}

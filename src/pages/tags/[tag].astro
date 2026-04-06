@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PromptCard from "../../components/PromptCard.astro";
 import TagCloud from "../../components/TagCloud.astro";
 import { getCollection } from "astro:content";
+import { withBase } from "../../utils/paths";
 
 export async function getStaticPaths() {
   const allPrompts = await getCollection("prompts");
@@ -28,13 +29,14 @@ for (const prompt of allPrompts) {
     tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
   }
 }
+const tagsHref = withBase("/tags/");
 ---
 
 <BaseLayout title={`Tag: ${tag}`}>
   <div class="space-y-6">
     <div>
       <a
-        href="/tags/"
+        href={tagsHref}
         class="text-sm text-text-muted hover:text-accent transition-colors mb-4 inline-block"
       >
         ← All Tags

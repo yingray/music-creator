@@ -1,4 +1,6 @@
 ---
+import { withBase } from "../utils/paths";
+
 interface Props {
   slug: string;
   title: string;
@@ -15,10 +17,11 @@ interface Props {
 const { slug, title, genre, mood, tags, rating, starred, suno_model, metatags, updated } = Astro.props;
 
 const ratingStars = rating ? "★".repeat(rating) + "☆".repeat(5 - rating) : "";
+const promptHref = withBase(`/prompts/${slug}/`);
 ---
 
 <a
-  href={`/prompts/${slug}/`}
+  href={promptHref}
   class="block bg-bg-card border border-border rounded-xl p-5 hover:bg-bg-card-hover hover:border-accent/30 transition-all group"
 >
   <div class="flex items-start justify-between mb-3">

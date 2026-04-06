@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CopyButton from "../../components/CopyButton.astro";
 import { getCollection, render } from "astro:content";
+import { withBase } from "../../utils/paths";
 
 export async function getStaticPaths() {
   const prompts = await getCollection("prompts");
@@ -15,6 +16,7 @@ const { prompt } = Astro.props;
 const { Content } = await render(prompt);
 const { data } = prompt;
 const ratingStars = data.rating ? "★".repeat(data.rating) + "☆".repeat(5 - data.rating) : "";
+const promptsHref = withBase("/prompts/");
 ---
 
 <BaseLayout title={data.title}>
@@ -22,7 +24,7 @@ const ratingStars = data.rating ? "★".repeat(data.rating) + "☆".repeat(5 - d
     <!-- Header -->
     <div>
       <a
-        href="/prompts/"
+        href={promptsHref}
         class="text-sm text-text-muted hover:text-accent transition-colors mb-4 inline-block"
       >
         ← Back to Prompts
@@ -95,7 +97,7 @@ const ratingStars = data.rating ? "★".repeat(data.rating) + "☆".repeat(5 - d
           <div class="flex flex-wrap gap-1.5 mt-1">
             {data.tags.map((tag) => (
               <a
-                href={`/tags/${tag}/`}
+                href={withBase(`/tags/${tag}/`)}
                 class="bg-bg-secondary text-text-secondary hover:text-accent px-2 py-0.5 rounded text-xs transition-colors"
               >
                 {tag}

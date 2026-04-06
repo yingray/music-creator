@@ -1,8 +1,10 @@
 ---
+import { withBase } from "../utils/paths";
 
+const pagefindUrl = withBase("/pagefind/pagefind.js");
 ---
 
-<div class="relative" id="search-container">
+<div class="relative" id="search-container" data-pagefind-url={pagefindUrl}>
   <input
     type="text"
     id="search-input"
@@ -19,9 +21,13 @@
 
 <script is:inline>
   (async function initSearch() {
+    const container = document.getElementById("search-container");
+    const pagefindUrl = container?.dataset.pagefindUrl;
+    if (!pagefindUrl) return;
+
     let pagefind;
     try {
-      pagefind = await import("/pagefind/pagefind.js");
+      pagefind = await import(pagefindUrl);
       await pagefind.init();
     } catch {
       return; // Pagefind not available in dev mode

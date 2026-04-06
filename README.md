@@ -1,5 +1,13 @@
 # Astro Starter Kit: Minimal
 
+## Deploy to GitHub Pages
+
+This repository now auto-deploys to GitHub Pages from `main` using `.github/workflows/deploy.yml`.
+
+- Production URL: `https://yingray.github.io/music-creator/`
+- In GitHub repository settings, set `Pages > Source` to `GitHub Actions`
+- Astro is configured with `site: 'https://yingray.github.io'` and `base: '/music-creator'`
+
 ```sh
 npm create astro@latest -- --template minimal
 ```
