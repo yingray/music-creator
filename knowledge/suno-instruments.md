@@ -68,6 +68,25 @@
 | Choir | choir, choral, gospel choir, backing vocals | Layered, powerful |
 | Vocal Effects | vocoder, auto-tune, pitched vocals | Electronic, processed |
 
+### v5 Vocal Direction Terms
+
+These terms describe how the voice should sound — use them in the **style prompt** alongside genre and mood:
+
+| Direction | Prompt Terms | Character |
+|-----------|-------------|-----------|
+| Whispered | whispered, breathy, intimate, ASMR-like | Quiet, close-mic, personal |
+| Belted | belted, powerful, chest voice, full voice | High energy, sustained notes |
+| Falsetto | falsetto, head voice, ethereal male vocal | High-pitched, airy |
+| Raspy | raspy, gritty vocal, rough vocal, gravelly | Weathered, textured |
+| Operatic | operatic, classical vocal, bel canto | Dramatic, trained, wide range |
+| Rap/Spoken | rap, spoken word, rhythmic speech, flow | Non-melodic, rhythmic |
+| Smoky | smoky, husky, sultry | Jazz club, intimate, warm |
+| Bright | bright vocal, clear voice, crisp vocal | Clean, youthful, pop |
+
+For **bracket-format metatags** (e.g., `[Vocal Style: Whisper]`, `[Belted]`) placed in the lyrics field, see `knowledge/suno-metatags.md`.
+
+> **v5.5 tip**: When using **Voices** (voice cloning), drop gender descriptors ("male vocals", "female vocals") — the cloned voice already defines gender and timbre, so these terms waste prompt space.
+
 ## Production / Texture Terms
 | Term | Effect |
 |------|--------|

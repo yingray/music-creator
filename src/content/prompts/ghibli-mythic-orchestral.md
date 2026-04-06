@@ -4,8 +4,10 @@ tags: [orchestral, ghibli, hisaishi, fantasy, mythic, nature, cinematic, layered
 genre: orchestral fantasy
 mood: serene-to-epic
 instruments: [piano, flute, oboe, harp, strings, french horn, timpani]
-suno_model: v4
-prompt: "orchestral fantasy in a natural mythic style, intimate piano opening, lyrical woodwinds, harp glimmers, transparent string writing, gradual symphonic build, warm French horns, restrained timpani, sweeping strings, spiritual and majestic, serene then expansive, organic acoustic orchestration, no modern trailer sound, no heavy percussion, no synth-driven texture"
+suno_model: v5
+use_case: animation score, cinematic
+metatags: true
+prompt: "orchestral fantasy in a natural mythic style, serene then expansive, intimate piano opening, lyrical woodwinds, harp glimmers, transparent string writing, gradual symphonic build, warm French horns, restrained timpani, sweeping strings, spiritual and majestic, organic acoustic orchestration, instrumental, animation score"
 negative_prompt: "electronic, synth, synthesizer, drum machine, drum kit, trap, EDM, dubstep, electric guitar, bass guitar, modern trailer, hybrid orchestral, risers, impacts, booms, sub bass, beats, loops, pop, rock, hip-hop, lo-fi, distortion, heavy percussion"
 rating: 4
 starred: true
@@ -14,6 +16,8 @@ updated: 2026-04-06
 ---
 
 ## Notes
+
+Updated to v5 — moved anti-pattern anchoring ("no modern trailer sound", etc.) from the positive prompt to the negative prompt, which is more effective in v5. Added use case ("animation score"). The 3-Layer Build technique maps naturally to v5 metatags.
 
 Inspired by Joe Hisaishi's Princess Mononoke score. The core technique is **layered build**: start sparse and intimate, then gradually expand into full orchestral majesty.
 
@@ -71,5 +75,33 @@ For extra mythic/nature feel, add:
 
 ### Simplified Prompt Version
 ```
-quiet orchestral fantasy, delicate piano, airy flute, oboe, harp, soft strings, gradual build, warm French horn, swelling full orchestra, noble and majestic, mystical forest atmosphere, serene opening, expansive emotional climax, acoustic, natural, cinematic but not trailer-like
+quiet orchestral fantasy, delicate piano, airy flute, oboe, harp, soft strings, gradual build, warm French horn, swelling full orchestra, noble and majestic, mystical forest atmosphere, serene opening, expansive emotional climax, acoustic, natural, instrumental, animation score
 ```
+
+### v5 Metatags for 3-Layer Build
+
+The layered build technique maps directly to v5 structure metatags:
+
+```
+[Intro]
+[Grand Piano]
+[Atmosphere: Dreamy]
+
+[Instrumental]
+[Flute]
+[Harp]
+[Mood: Romantic]
+
+[Build]
+[Energy: Building]
+[Cello]
+
+[Instrumental]
+[Energy: Explosive]
+[Mood: Euphoric]
+
+[Outro: Fade out]
+[Effect: Reverb: Hall]
+```
+
+This gives v5 explicit structural guidance matching the 3-layer progression — v4 relied entirely on descriptive terms like "gradual symphonic build" which sometimes produced inconsistent results.

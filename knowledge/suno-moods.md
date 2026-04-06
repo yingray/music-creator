@@ -58,6 +58,23 @@
 | High | 140-160 | Fast, intense, urgent | Drum and bass, punk |
 | Very High | 160+ | Extreme, frantic | Hardcore, speedcore |
 
+## Genre-BPM Calibration (v5 Research)
+
+More precise per-genre BPM ranges, calibrated from v5 testing. Use these when the general Energy Levels table above is too broad.
+
+| Genre | BPM Range | Notes |
+|-------|-----------|-------|
+| Lo-fi | 70–84 | Swung feel; -12 to -11 LUFS vibe |
+| Acoustic Folk | 84–100 | Verse-led narrative pacing |
+| Synthwave | 84–108 | Retro clean; tape wow/flutter |
+| Cinematic Pop | 88–110 | Epic lift + choir territory |
+| Indie Pop | 102–112 | Chantable hook sweet spot |
+| Afro-Pop / Amapiano | 102–114 | Swing 55–58%; log drum grooves |
+| Indo-Fusion Pop | 96–110 | Modern mix, not filmi |
+| K-Pop | 120–132 | High section contrast |
+| Melodic House | 120–126 | Side-chained bass + bright plucks |
+| Trap | 130–150 | Half-time feel; 808 in key |
+
 ## Combining Moods
 - Use 2-3 mood descriptors max to avoid confusion
 - Pair contrasting moods for interesting results: "melancholic yet beautiful", "dark but uplifting"

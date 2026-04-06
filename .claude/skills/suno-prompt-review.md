@@ -26,11 +26,12 @@ Either:
 
 ### Step 2: Reference Knowledge Base
 Read ALL knowledge base files:
-- `knowledge/suno-model-practices.md` — best practices and common pitfalls
+- `knowledge/suno-model-practices.md` — best practices, common pitfalls, **v5/v5.5 features**
 - `knowledge/suno-genres.md` — validate genre terms
-- `knowledge/suno-instruments.md` — validate instrument terms
-- `knowledge/suno-moods.md` — validate mood terms
+- `knowledge/suno-instruments.md` — validate instrument terms, **v5 vocal direction terms**
+- `knowledge/suno-moods.md` — validate mood terms, **genre-BPM calibration table**
 - `knowledge/suno-orchestration.md` — orchestration patterns, layered builds, era anchoring
+- `knowledge/suno-metatags.md` — **v5 metatags reference** for section structure and vocal control
 
 ### Step 3: Analyze the Prompt
 
@@ -63,6 +64,13 @@ Check for these issues:
 **Model Compatibility:**
 - [ ] Aligned with target Suno model practices?
 - [ ] Any deprecated patterns?
+
+**v5 Readiness (if targeting v5/v5.5):**
+- [ ] Uses v5 prompt formula (includes vocal direction if vocal track)?
+- [ ] Uses metatags for section control (recommended for vocal tracks)?
+- [ ] Use case specified when relevant?
+- [ ] BPM within genre-calibrated range (check `suno-moods.md` calibration table)?
+- [ ] Vocal direction terms used from `suno-instruments.md` v5 section?
 
 ### Step 4: Score and Report
 
@@ -104,6 +112,11 @@ Format output as:
 ### Variations to Try
 1. [variation with different emphasis]
 2. [variation with different mood]
+
+### v5 Migration Suggestions (if prompt targets v4 or earlier)
+- [specific suggestions to upgrade to v5 patterns]
+- [metatags to add for section control]
+- [vocal direction or use case to include]
 ```
 
 ### Step 6: Update File (Optional)

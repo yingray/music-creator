@@ -5,15 +5,33 @@
 
 ## General Prompt Structure
 
-### Effective Pattern
+### Classic Pattern (v4, still works in v5)
 ```
 [genre/style], [mood/atmosphere], [key instruments], [production quality], [tempo/BPM]
 ```
 
-### Example
+### v5 Recommended Pattern
 ```
+[style], [mood], [tempo/energy], [core instruments 2-4], [vocal direction], [use case]
+```
+
+v5 adds two important components:
+- **Vocal direction** — how the voice should sound ("warm female vocal", "raspy male vocal", "no vocals")
+- **Use case** — what the track is for ("content creation background", "trailer", "studying")
+
+### Examples
+```
+# v4 style (instrumental)
 dark ambient electronic, haunting atmosphere, ethereal synth pads, deep sub-bass,
 reverb-drenched, slow evolving textures, 60 BPM
+
+# v5 style (vocal)
+indie pop, uplifting warm energy, 108 BPM, acoustic guitar, synth pad, light drums,
+warm female vocal, content creation background
+
+# v5 style (instrumental with use case)
+lo-fi ambient, calm spacious, slow tempo, soft keys, vinyl texture, instrumental,
+background music for studying
 ```
 
 ## Core Principles
@@ -95,13 +113,17 @@ distortion, noise, aggressive, loud, harsh, screaming
 ## Song Structure Control
 
 ### Section Tags (in lyrics/prompt)
-Some Suno models support section hints:
+Section tags are placed in the **lyrics field** in Custom mode, before the lyrics for each section:
 - `[Intro]`, `[Verse]`, `[Chorus]`, `[Bridge]`, `[Outro]`
 - `[Instrumental]`, `[Break]`, `[Solo]`
 - `[Build]`, `[Drop]`, `[Climax]`
 
-### Duration Hints
-- Suno typically generates 1-4 minute tracks
+v5 adds vocal, mood, and production metatags that go far beyond section structure.
+See `knowledge/suno-metatags.md` for the comprehensive v5 metatags reference.
+
+### Duration
+- v4: typically 1-4 minute tracks
+- v5: up to **4 minutes per single pass**, extendable to **8 minutes** via the Extend feature
 - For longer pieces, use "extended" or "long form"
 - For shorter pieces, use "short", "brief"
 
@@ -120,6 +142,59 @@ Some Suno models support section hints:
 - Production quality terms are well understood
 - BPM specification is more accurately followed
 - Multi-language genre terms work better (e.g., "bossa nova", "taiko")
+
+### v4 → v5 Migration
+- v5 understands the full metatags system (see `knowledge/suno-metatags.md`)
+- v5 supports vocal persona stability — voice character stays consistent across sections and Extend chains
+- v5 handles fusion pairs more stably (e.g., Pop+EDM, Gospel+Trap, Jazz+Hip Hop)
+- v5 respects BPM and key specification more accurately
+- v5 combines natural language style prompts with bracket metatags in the lyrics field
+- v5 has Studio Timeline — select and replace specific sections without losing others (inpainting)
+- v5 supports callback phrasing — reliably reference earlier melodies at the outro
+
+### v5 Specific Tips
+- **Shorter, cleaner still wins** — coherence over length; one main idea first
+- **Iterate one variable at a time** — change tempo OR instrumentation OR vocal direction, not all at once
+- **Use case matters** — specifying what the track is for (studying, trailer, content creation) improves relevance
+- **Production studio terms** work well: "punchy drums, wide stereo field, crisp high-end, warm bass"
+- **Temporal references > artist names**: "late 70s disco" > naming performers
+- **Metatags for vocal tracks** — use bracket tags for section structure and vocal delivery control
+- **Instrument tags manifest with clearer separation** in v5
+- **Personas maintain consistent tone** across sections
+
+### v5 Pre-Generation Checklist
+Before generating, verify:
+- [ ] One clear main style exists
+- [ ] Emotional direction is obvious
+- [ ] Energy level / BPM is specified
+- [ ] Instruments match the style (2-4)
+- [ ] Vocal approach is defined (or explicitly instrumental)
+- [ ] Use case is specified when relevant
+- [ ] Metatags are set up in lyrics field (if vocal track)
+
+### v5.5 Personalization (March 2026)
+v5.5 is NOT a new audio engine — it's a personalization layer on top of v5. All v5 prompt syntax, metatags, and best practices remain fully compatible.
+
+**Voices** — Clone your own voice via upload or recording
+- Suno applies automatic stem separation to isolate your vocal tone
+- Requires anti-deepfake verification (speaking a random phrase)
+- Pro/Premier tier only; locked to your account
+
+**Custom Models** — Train Suno on your original music
+- System analyzes your production style, instrumentation, and mixing
+- Up to 3 models per account; separate models for different genres work best
+- Pro/Premier tier only
+
+**My Taste** — Automatic preference learning
+- Learns passively from your generation history and skipped outputs
+- Available to all users (including free tier)
+- Shapes default suggestions; explicit prompts always override
+
+**Prompt Optimization for v5.5:**
+- When using **Voices**: drop gender descriptors ("male vocals", "female vocals") to free up prompt space
+- When using **Custom Models**: eliminate generic production details the model already knows
+- v5.5 rewards more **nuanced descriptors** that v5 might have ignored
+- Stacking order: My Taste (foundation) → Custom Model (production DNA) → Voice (vocal tone) → Prompt (song direction)
 
 ## Advanced Prompt Strategies
 
@@ -190,3 +265,6 @@ For classical/orchestral, prompts can be longer (15-25 terms) because:
 8. **Forgetting production terms** — They shape the sound significantly
 9. **"Cinematic" without guardrails** — Drifts to trailer/hybrid sound without explicit exclusion
 10. **Insufficient classical exclusion** — Classical prompts need 15-50 negative terms to stay pure
+11. **Not using metatags for vocal tracks (v5)** — Vocal tracks without section/delivery tags produce less controlled results
+12. **Missing vocal direction** — v5 prompts should specify how the voice sounds, not just whether vocals exist
+13. **No use case specified** — Missing listener context results in generic outputs; specifying "for studying" or "trailer music" helps focus

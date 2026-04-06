@@ -13,7 +13,7 @@ A personal Astro website for managing Suno Music prompts and negative prompts.
 - `src/content/prompts/` — Prompt note markdown files
 - `src/content/templates/` — Reusable prompt templates
 - `src/content.config.ts` — Content Collection schemas (Zod)
-- `knowledge/` — Suno reference docs (genres, moods, instruments, model practices)
+- `knowledge/` — Suno reference docs (genres, moods, instruments, model practices, **v5 metatags**)
 - `.claude/skills/` — Claude Code skills for prompt assistance
 
 ## Commands
@@ -23,6 +23,12 @@ A personal Astro website for managing Suno Music prompts and negative prompts.
 
 ## Adding a New Prompt
 Create a `.md` file in `src/content/prompts/` with the required frontmatter schema defined in `src/content.config.ts`.
+
+### v5 Schema Fields
+- `suno_model` defaults to `v5` (existing v4 prompts explicitly set `v4`)
+- Optional fields: `bpm`, `vocal_style`, `use_case`, `metatags` (boolean)
+- See `knowledge/suno-metatags.md` for the v5 metatags reference
+- See `knowledge/suno-model-practices.md` for v5/v5.5 best practices
 
 ## Skills
 - `/suno-prompt-craft` — Generate Suno prompts from a description

@@ -26,10 +26,11 @@ Determine:
 
 ### Step 2: Reference Knowledge Base
 Read:
-- `knowledge/suno-model-practices.md` — negative prompt section
+- `knowledge/suno-model-practices.md` — negative prompt section, **v5/v5.5 practices**
 - `knowledge/suno-instruments.md` — instrument terms for exclusion
 - `knowledge/suno-genres.md` — genre terms for exclusion
 - `knowledge/suno-orchestration.md` — classical shared exclude sets, anti-modern anchors
+- `knowledge/suno-metatags.md` — **v5 metatags** that complement negative prompts
 
 ### Step 3: Suggest Negative Prompts
 
@@ -75,9 +76,22 @@ Provide categorized suggestions:
 - [terms to add if specific issues appear]
 ```
 
+## Metatags as Complement to Negative Prompts (v5)
+
+In v5, **metatags offer an alternative/complementary approach** to negative prompts for certain goals:
+
+| Goal | Negative Prompt Approach | Metatags Approach |
+|------|------------------------|-------------------|
+| Control vocal style | Exclude unwanted styles: `screaming, auto-tune` | Specify wanted style: `[Vocal Style: Whisper]` |
+| Control energy | Exclude: `aggressive, loud, intense` | Specify: `[Mood: Chill]`, `[Energy: Building]` |
+| Control production | Exclude: `distortion, harsh` | Specify: `[Effect: Lo-fi]`, `[Texture: Velvet]` |
+
+**Best practice**: Use negative prompts for broad exclusions (genres, instrument families) and metatags for precise per-section control (vocal delivery, energy shifts, production effects).
+
 ## Guidelines
 - Communicate in Traditional Chinese (台灣繁體中文)
 - Keep negative prompt terms in English
 - Be specific: "vocals" > "no singing"
 - Avoid redundancy: "drums" already covers "snare" in most cases
 - Warn about over-constraining — too many negatives can make output generic
+- For v5 vocal tracks, suggest metatags alongside negative prompts when appropriate
