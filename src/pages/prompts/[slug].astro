@@ -32,9 +32,16 @@ const ratingStars = data.rating ? "★".repeat(data.rating) + "☆".repeat(5 - d
           {data.starred && <span class="text-star">★</span>}
           {data.title}
         </h1>
-        <span class="text-sm text-text-muted bg-bg-secondary px-3 py-1 rounded-lg">
-          {data.suno_model}
-        </span>
+        <div class="flex items-center gap-2">
+          {data.metatags && (
+            <span class="text-sm text-prompt bg-prompt/10 px-3 py-1 rounded-lg">
+              Metatags
+            </span>
+          )}
+          <span class="text-sm text-text-muted bg-bg-secondary px-3 py-1 rounded-lg">
+            {data.suno_model}
+          </span>
+        </div>
       </div>
       <div class="flex items-center gap-3 mt-2">
         <span class="bg-accent/15 text-accent px-2.5 py-0.5 rounded text-sm">{data.genre}</span>
@@ -96,6 +103,24 @@ const ratingStars = data.rating ? "★".repeat(data.rating) + "☆".repeat(5 - d
             ))}
           </div>
         </div>
+        {data.bpm && (
+          <div>
+            <span class="text-text-muted">BPM</span>
+            <p class="text-text-secondary mt-1">{data.bpm}</p>
+          </div>
+        )}
+        {data.vocal_style && (
+          <div>
+            <span class="text-text-muted">Vocal Style</span>
+            <p class="text-text-secondary mt-1">{data.vocal_style}</p>
+          </div>
+        )}
+        {data.use_case && (
+          <div>
+            <span class="text-text-muted">Use Case</span>
+            <p class="text-text-secondary mt-1">{data.use_case}</p>
+          </div>
+        )}
         {data.suno_url && (
           <div class="col-span-2">
             <span class="text-text-muted">Suno Link</span>

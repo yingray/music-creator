@@ -8,10 +8,11 @@ interface Props {
   rating?: number;
   starred: boolean;
   suno_model: string;
+  metatags?: boolean;
   updated: Date;
 }
 
-const { slug, title, genre, mood, tags, rating, starred, suno_model, updated } = Astro.props;
+const { slug, title, genre, mood, tags, rating, starred, suno_model, metatags, updated } = Astro.props;
 
 const ratingStars = rating ? "★".repeat(rating) + "☆".repeat(5 - rating) : "";
 ---
@@ -25,9 +26,16 @@ const ratingStars = rating ? "★".repeat(rating) + "☆".repeat(5 - rating) : "
       {starred && <span class="text-star mr-1">★</span>}
       {title}
     </h3>
-    <span class="text-xs text-text-muted bg-bg-secondary px-2 py-0.5 rounded">
-      {suno_model}
-    </span>
+    <div class="flex items-center gap-1.5">
+      {metatags && (
+        <span class="text-xs text-prompt bg-prompt/10 px-2 py-0.5 rounded">
+          Metatags
+        </span>
+      )}
+      <span class="text-xs text-text-muted bg-bg-secondary px-2 py-0.5 rounded">
+        {suno_model}
+      </span>
+    </div>
   </div>
 
   <div class="flex items-center gap-2 mb-3 text-xs">
