@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TagCloud from "../../components/TagCloud.astro";
+import { getCollection } from "astro:content";
+
+const allPrompts = await getCollection("prompts");
+const tagCounts = new Map<string, number>();
+for (const prompt of allPrompts) {
+  for (const tag of prompt.data.tags) {
+    tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+  }
+}
+---
+
+<BaseLayout title="Tags">
+  <div class="space-y-6">
+    <div>
+      <h1 class="text-2xl font-bold mb-2">Tags</h1>
+      <p class="text-text-secondary">{tagCounts.size} tags across {allPrompts.length} prompts.</p>
+    </div>
+
+    <TagCloud tags={tagCounts} />
+  </div>
+</BaseLayout>

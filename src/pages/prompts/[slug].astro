@@ -1,0 +1,139 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CopyButton from "../../components/CopyButton.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const prompts = await getCollection("prompts");
+  return prompts.map((prompt) => ({
+    params: { slug: prompt.id },
+    props: { prompt },
+  }));
+}
+
+const { prompt } = Astro.props;
+const { Content } = await render(prompt);
+const { data } = prompt;
+const ratingStars = data.rating ? "★".repeat(data.rating) + "☆".repeat(5 - data.rating) : "";
+---
+
+<BaseLayout title={data.title}>
+  <div class="max-w-3xl space-y-6">
+    <!-- Header -->
+    <div>
+      <a
+        href="/prompts/"
+        class="text-sm text-text-muted hover:text-accent transition-colors mb-4 inline-block"
+      >
+        ← Back to Prompts
+      </a>
+      <div class="flex items-start justify-between">
+        <h1 class="text-2xl font-bold">
+          {data.starred && <span class="text-star">★</span>}
+          {data.title}
+        </h1>
+        <span class="text-sm text-text-muted bg-bg-secondary px-3 py-1 rounded-lg">
+          {data.suno_model}
+        </span>
+      </div>
+      <div class="flex items-center gap-3 mt-2">
+        <span class="bg-accent/15 text-accent px-2.5 py-0.5 rounded text-sm">{data.genre}</span>
+        <span class="bg-bg-card text-text-secondary px-2.5 py-0.5 rounded text-sm">{data.mood}</span>
+        {data.rating && <span class="text-star text-sm">{ratingStars}</span>}
+      </div>
+    </div>
+
+    <!-- Prompt -->
+    <div class="bg-bg-card border border-prompt/20 rounded-xl p-5">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-sm font-semibold text-prompt uppercase tracking-wider">Prompt</h2>
+        <CopyButton text={data.prompt} label="Copy Prompt" variant="prompt" />
+      </div>
+      <p class="text-text-primary font-mono text-sm leading-relaxed whitespace-pre-wrap">
+        {data.prompt}
+      </p>
+    </div>
+
+    <!-- Negative Prompt -->
+    {data.negative_prompt && (
+      <div class="bg-bg-card border border-negative/20 rounded-xl p-5">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-sm font-semibold text-negative uppercase tracking-wider">
+            Negative Prompt
+          </h2>
+          <CopyButton text={data.negative_prompt} label="Copy Negative" variant="negative" />
+        </div>
+        <p class="text-text-primary font-mono text-sm leading-relaxed whitespace-pre-wrap">
+          {data.negative_prompt}
+        </p>
+      </div>
+    )}
+
+    <!-- Metadata -->
+    <div class="bg-bg-card border border-border rounded-xl p-5">
+      <h2 class="text-sm font-semibold text-text-muted uppercase tracking-wider mb-3">Details</h2>
+      <div class="grid grid-cols-2 gap-4 text-sm">
+        <div>
+          <span class="text-text-muted">Instruments</span>
+          <div class="flex flex-wrap gap-1.5 mt-1">
+            {data.instruments.map((inst) => (
+              <span class="bg-bg-secondary text-text-secondary px-2 py-0.5 rounded text-xs">
+                {inst}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div>
+          <span class="text-text-muted">Tags</span>
+          <div class="flex flex-wrap gap-1.5 mt-1">
+            {data.tags.map((tag) => (
+              <a
+                href={`/tags/${tag}/`}
+                class="bg-bg-secondary text-text-secondary hover:text-accent px-2 py-0.5 rounded text-xs transition-colors"
+              >
+                {tag}
+              </a>
+            ))}
+          </div>
+        </div>
+        {data.suno_url && (
+          <div class="col-span-2">
+            <span class="text-text-muted">Suno Link</span>
+            <a
+              href={data.suno_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block text-accent hover:text-accent-hover mt-1 transition-colors"
+            >
+              {data.suno_url}
+            </a>
+          </div>
+        )}
+        <div>
+          <span class="text-text-muted">Created</span>
+          <p class="text-text-secondary mt-1">
+            {data.created.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+          </p>
+        </div>
+        <div>
+          <span class="text-text-muted">Updated</span>
+          <p class="text-text-secondary mt-1">
+            {data.updated.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Markdown Notes -->
+    <div class="bg-bg-card border border-border rounded-xl p-5">
+      <h2 class="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">Notes</h2>
+      <div class="prose prose-invert prose-sm max-w-none
+        prose-headings:text-text-primary prose-p:text-text-secondary
+        prose-a:text-accent prose-strong:text-text-primary
+        prose-li:text-text-secondary prose-code:text-accent
+        prose-code:bg-bg-secondary prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded">
+        <Content />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

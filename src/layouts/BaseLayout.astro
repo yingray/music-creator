@@ -1,0 +1,32 @@
+---
+import "../styles/global.css";
+import Sidebar from "../components/Sidebar.astro";
+import SearchBar from "../components/SearchBar.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Suno Music Prompt Notes" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | Suno Prompts</title>
+  </head>
+  <body class="min-h-screen flex">
+    <Sidebar />
+    <main class="flex-1 ml-64 p-8 max-w-6xl">
+      <div class="mb-8 max-w-md">
+        <SearchBar />
+      </div>
+      <slot />
+    </main>
+  </body>
+</html>

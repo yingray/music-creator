@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PromptCard from "../components/PromptCard.astro";
+import { getCollection } from "astro:content";
+
+const allPrompts = await getCollection("prompts");
+const sortedPrompts = allPrompts.sort(
+  (a, b) => b.data.updated.getTime() - a.data.updated.getTime()
+);
+const starredPrompts = sortedPrompts.filter((p) => p.data.starred);
+const recentPrompts = sortedPrompts.slice(0, 6);
+
+const totalPrompts = allPrompts.length;
+const allTags = new Set(allPrompts.flatMap((p) => p.data.tags));
+const allGenres = new Set(allPrompts.map((p) => p.data.genre));
+const ratedPrompts = allPrompts.filter((p) => p.data.rating);
+const avgRating =
+  ratedPrompts.length > 0
+    ? ratedPrompts.reduce((sum, p) => sum + (p.data.rating ?? 0), 0) / ratedPrompts.length
+    : 0;
+---
+
+<BaseLayout title="Dashboard">
+  <div class="space-y-8">
+    <div>
+      <h1 class="text-2xl font-bold mb-2">Dashboard</h1>
+      <p class="text-text-secondary">Your Suno Music prompt collection at a glance.</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-4 gap-4">
+      {[
+        { label: "Total Prompts", value: totalPrompts, icon: "♫" },
+        { label: "Tags", value: allTags.size, icon: "#" },
+        { label: "Genres", value: allGenres.size, icon: "♪" },
+        { label: "Avg Rating", value: avgRating.toFixed(1), icon: "★" },
+      ].map((stat) => (
+        <div class="bg-bg-card border border-border rounded-xl p-4">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-accent">{stat.icon}</span>
+            <span class="text-xs text-text-muted uppercase tracking-wider">{stat.label}</span>
+          </div>
+          <p class="text-2xl font-bold">{stat.value}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Starred -->
+    {starredPrompts.length > 0 && (
+      <div>
+        <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
+          <span class="text-star">★</span> Starred
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {starredPrompts.map((prompt) => (
+            <PromptCard
+              slug={prompt.id}
+              title={prompt.data.title}
+              genre={prompt.data.genre}
+              mood={prompt.data.mood}
+              tags={prompt.data.tags}
+              rating={prompt.data.rating}
+              starred={prompt.data.starred}
+              suno_model={prompt.data.suno_model}
+              updated={prompt.data.updated}
+            />
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Recent -->
+    <div>
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-semibold">Recent Prompts</h2>
+        <a href="/prompts/" class="text-sm text-accent hover:text-accent-hover transition-colors">
+          View all →
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {recentPrompts.map((prompt) => (
+          <PromptCard
+            slug={prompt.id}
+            title={prompt.data.title}
+            genre={prompt.data.genre}
+            mood={prompt.data.mood}
+            tags={prompt.data.tags}
+            rating={prompt.data.rating}
+            starred={prompt.data.starred}
+            suno_model={prompt.data.suno_model}
+            updated={prompt.data.updated}
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

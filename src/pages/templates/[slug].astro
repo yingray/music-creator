@@ -1,0 +1,96 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CopyButton from "../../components/CopyButton.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const templates = await getCollection("templates");
+  return templates.map((template) => ({
+    params: { slug: template.id },
+    props: { template },
+  }));
+}
+
+const { template } = Astro.props;
+const { Content } = await render(template);
+const { data } = template;
+---
+
+<BaseLayout title={data.title}>
+  <div class="max-w-3xl space-y-6">
+    <div>
+      <a
+        href="/templates/"
+        class="text-sm text-text-muted hover:text-accent transition-colors mb-4 inline-block"
+      >
+        ← Back to Templates
+      </a>
+      <h1 class="text-2xl font-bold mb-2">{data.title}</h1>
+      <p class="text-text-secondary">{data.description}</p>
+    </div>
+
+    <!-- Prompt Template -->
+    <div class="bg-bg-card border border-prompt/20 rounded-xl p-5">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-sm font-semibold text-prompt uppercase tracking-wider">Prompt Template</h2>
+        <CopyButton text={data.prompt_template} label="Copy" variant="prompt" />
+      </div>
+      <p class="text-text-primary font-mono text-sm leading-relaxed whitespace-pre-wrap">
+        {data.prompt_template}
+      </p>
+    </div>
+
+    <!-- Negative Prompt Template -->
+    {data.negative_prompt_template && (
+      <div class="bg-bg-card border border-negative/20 rounded-xl p-5">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-sm font-semibold text-negative uppercase tracking-wider">
+            Negative Prompt Template
+          </h2>
+          <CopyButton text={data.negative_prompt_template} label="Copy" variant="negative" />
+        </div>
+        <p class="text-text-primary font-mono text-sm leading-relaxed whitespace-pre-wrap">
+          {data.negative_prompt_template}
+        </p>
+      </div>
+    )}
+
+    <!-- Variables -->
+    <div class="bg-bg-card border border-border rounded-xl p-5">
+      <h2 class="text-sm font-semibold text-text-muted uppercase tracking-wider mb-3">
+        Variables
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        {data.variables.map((v) => (
+          <span class="font-mono text-sm bg-accent/10 text-accent px-3 py-1 rounded-lg border border-accent/20">
+            {`{${v}}`}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="flex flex-wrap gap-1.5">
+      {data.tags.map((tag) => (
+        <a
+          href={`/tags/${tag}/`}
+          class="text-xs text-text-muted bg-bg-card border border-border px-2 py-0.5 rounded hover:text-accent transition-colors"
+        >
+          {tag}
+        </a>
+      ))}
+    </div>
+
+    <!-- Markdown Content -->
+    <div class="bg-bg-card border border-border rounded-xl p-5">
+      <div class="prose prose-invert prose-sm max-w-none
+        prose-headings:text-text-primary prose-p:text-text-secondary
+        prose-a:text-accent prose-strong:text-text-primary
+        prose-li:text-text-secondary prose-th:text-text-primary
+        prose-td:text-text-secondary prose-code:text-accent
+        prose-code:bg-bg-secondary prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded">
+        <Content />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

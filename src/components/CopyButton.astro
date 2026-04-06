@@ -1,0 +1,47 @@
+---
+interface Props {
+  text: string;
+  label?: string;
+  variant?: "prompt" | "negative" | "default";
+}
+
+const { text, label = "Copy", variant = "default" } = Astro.props;
+
+const variantClasses = {
+  prompt: "border-prompt/30 hover:bg-prompt/10 text-prompt",
+  negative: "border-negative/30 hover:bg-negative/10 text-negative",
+  default: "border-border hover:bg-bg-card-hover text-text-secondary",
+};
+---
+
+<button
+  class:list={[
+    "copy-btn inline-flex items-center gap-1.5 px-3 py-1.5 border rounded-lg text-xs font-medium transition-all cursor-pointer",
+    variantClasses[variant],
+  ]}
+  data-copy-text={text}
+>
+  <span class="copy-icon">⧉</span>
+  <span class="copy-label">{label}</span>
+</button>
+
+<script>
+  document.addEventListener("click", (e) => {
+    const btn = (e.target as HTMLElement).closest(".copy-btn") as HTMLElement;
+    if (!btn) return;
+
+    const text = btn.dataset.copyText;
+    if (!text) return;
+
+    navigator.clipboard.writeText(text).then(() => {
+      const label = btn.querySelector(".copy-label")!;
+      const original = label.textContent;
+      label.textContent = "Copied!";
+      btn.classList.add("!border-prompt", "!text-prompt");
+      setTimeout(() => {
+        label.textContent = original;
+        btn.classList.remove("!border-prompt", "!text-prompt");
+      }, 1500);
+    });
+  });
+</script>
