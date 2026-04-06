@@ -33,7 +33,8 @@ Read the project knowledge base files to inform your suggestions:
 - `knowledge/suno-genres.md` — genre and sub-genre reference
 - `knowledge/suno-moods.md` — mood descriptors and energy levels
 - `knowledge/suno-instruments.md` — instrument and production terms
-- `knowledge/suno-model-practices.md` — model-specific best practices
+- `knowledge/suno-model-practices.md` — model-specific best practices and advanced strategies
+- `knowledge/suno-orchestration.md` — classical orchestration, layered builds, era anchoring
 
 ### Step 3: Generate the Prompt
 Construct a prompt following this structure:

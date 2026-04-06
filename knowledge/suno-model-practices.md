@@ -121,13 +121,72 @@ Some Suno models support section hints:
 - BPM specification is more accurately followed
 - Multi-language genre terms work better (e.g., "bossa nova", "taiko")
 
+## Advanced Prompt Strategies
+
+### 1. Shared Exclude Sets
+When creating a **series of related prompts** (e.g., multi-movement concerto, album tracks), use a single shared negative prompt across all of them. Benefits:
+- Consistency across the set
+- One place to tune exclusions
+- Prevents style drift between related tracks
+
+### 2. Era Anchoring
+Add historical period anchors to prevent modern style creep:
+```
+19th-century classical idiom, traditional acoustic orchestration
+```
+This is especially important for classical/orchestral prompts where Suno's modern training data tends to pull results toward contemporary scoring.
+
+### 3. Anti-Pattern Anchoring
+Explicitly state what you're NOT going for in the positive prompt:
+```
+cinematic but not trailer-like
+no modern scoring language
+```
+This is more effective than relying solely on negative prompts for subtle style distinctions.
+
+### 4. Structural Description
+Instead of only describing mood/timbre, describe the **form and progression**:
+```
+intimate opening, gradual symphonic build, expansive climax
+```
+This gives Suno structural guidance for the entire track, producing more coherent results.
+
+### 5. Relationship Description
+Describe how instruments interact, not just what they are:
+```
+intense dialogue between solo piano and orchestra
+singing piano over tender orchestral accompaniment
+```
+This produces more interesting arrangements than simple instrument lists.
+
+### 6. Layered Build Technique
+For pieces that evolve from quiet to grand, describe the layers:
+```
+intimate piano opening → gradual symphonic build → sweeping full orchestra
+```
+Suno handles gradual textural changes better than abrupt ones. See `knowledge/suno-orchestration.md` for detailed orchestration layering guide.
+
+### 7. Movement-Specific Keyword Strategy
+When writing multi-movement works, identify 5 core keywords per movement:
+- Mvt 1: grand, stormy, virtuosic, dramatic, sonata-form
+- Mvt 2: lyrical, cantabile, introspective, tender, poetic
+- Mvt 3: fiery, brilliant, triumphant, finale, exhilarating
+
+### 8. Classical Prompt Length
+For classical/orchestral, prompts can be longer (15-25 terms) because:
+- More specificity is needed to prevent modern drift
+- Era anchoring and anti-pattern terms add necessary guardrails
+- This is an exception to the general "shorter is better" rule
+
 ## Common Pitfalls
 
 1. **Too many genres** — Pick 1-2, not 5
 2. **Contradictory descriptors** — "quiet loud" confuses the model
 3. **Natural language** — Use comma-separated terms, not sentences
-4. **Over-specifying** — 5-10 descriptors total is ideal
+4. **Over-specifying** — 5-10 descriptors for pop/electronic, up to 20-25 for classical
 5. **Ignoring negative prompts** — They're powerful, use them
 6. **Not specifying BPM** — Leads to unpredictable tempo
 7. **Vague instruments** — "guitar" < "fingerpicked nylon guitar"
 8. **Forgetting production terms** — They shape the sound significantly
+9. **"Cinematic" without guardrails** — Drifts to trailer/hybrid sound without explicit exclusion
+10. **Insufficient classical exclusion** — Classical prompts need 15-50 negative terms to stay pure

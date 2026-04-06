@@ -29,6 +29,7 @@ Read:
 - `knowledge/suno-model-practices.md` — negative prompt section
 - `knowledge/suno-instruments.md` — instrument terms for exclusion
 - `knowledge/suno-genres.md` — genre terms for exclusion
+- `knowledge/suno-orchestration.md` — classical shared exclude sets, anti-modern anchors
 
 ### Step 3: Suggest Negative Prompts
 

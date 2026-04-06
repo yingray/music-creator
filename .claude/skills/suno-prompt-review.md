@@ -30,6 +30,7 @@ Read ALL knowledge base files:
 - `knowledge/suno-genres.md` — validate genre terms
 - `knowledge/suno-instruments.md` — validate instrument terms
 - `knowledge/suno-moods.md` — validate mood terms
+- `knowledge/suno-orchestration.md` — orchestration patterns, layered builds, era anchoring
 
 ### Step 3: Analyze the Prompt
 
