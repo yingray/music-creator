@@ -3,12 +3,12 @@ title: "Ghibli Mythic Orchestral (Princess Mononoke Style)"
 tags: [orchestral, ghibli, hisaishi, fantasy, mythic, nature, cinematic, layered-build]
 genre: orchestral fantasy
 mood: serene-to-epic
-instruments: [piano, flute, oboe, harp, strings, french horn, timpani]
+instruments: [piano, flute, oboe, harp, strings, french horn]
 suno_model: v5
 use_case: animation score, cinematic
 metatags: true
-prompt: "orchestral fantasy in a natural mythic style, serene then expansive, intimate piano opening, lyrical woodwinds, harp glimmers, transparent string writing, gradual symphonic build, warm French horns, restrained timpani, sweeping strings, spiritual and majestic, organic acoustic orchestration, instrumental, animation score"
-negative_prompt: "electronic, synth, synthesizer, drum machine, drum kit, trap, EDM, dubstep, electric guitar, bass guitar, modern trailer, hybrid orchestral, risers, impacts, booms, sub bass, beats, loops, pop, rock, hip-hop, lo-fi, distortion, heavy percussion"
+prompt: "orchestral fantasy in a natural mythic style, serene then expansive, intimate piano opening, lyrical woodwinds, harp glimmers, transparent string writing, gradual symphonic build, warm French horns, sweeping strings, spiritual and majestic, organic acoustic orchestration, instrumental, animation score"
+negative_prompt: "electronic, synth, synthesizer, drum machine, drum kit, drums, percussion, timpani, beat, rhythm, kick, snare, hi-hat, cymbal, marching, trap, EDM, dubstep, electric guitar, bass guitar, modern trailer, hybrid orchestral, risers, impacts, booms, sub bass, beats, loops, pop, rock, hip-hop, lo-fi, distortion, heavy percussion"
 rating: 4
 starred: true
 created: 2026-04-06
@@ -37,15 +37,14 @@ This is the most important pattern for this style. It's not "many instruments pl
 - Full violins → long melodic lines
 - French horn → distance, mountains, fate
 - Contrabass → space suddenly deepens
-- Light timpani → gentle foundation, not pop drumming
+- Contrabass pizzicato → rhythmic pulse without drums
 - Brass begins (restrained)
 - **Key**: layers grow organically, not sudden explosion
 
 #### Layer 3: Majestic Climax (壯闊感)
 - Full string section: melody + harmonic ocean
 - French horn / brass: heroic, vast
-- Timpani: epic weight
-- Cymbal swells: passage transitions
+- Low brass + contrabass: epic weight
 - Optional soft choir: sacred atmosphere
 - Woodwinds still present on top: maintains nature/spiritual feel
 - **Key**: melody + orchestration layers + harmonic progression (NOT percussion-driven)
@@ -57,11 +56,11 @@ This is the most important pattern for this style. It's not "many instruments pl
 - Driven by **melody, orchestration layers, and harmonic progression**
 
 ### Core Instrument Skeleton
-**Piano + Strings + Woodwinds + French Horn + Harp + Timpani**
+**Piano + Strings + Woodwinds + French Horn + Harp**
 
 For extra mythic/nature feel, add:
 - Female choir / boys choir (空靈感)
-- Ethnic percussion (subtle, traditional)
+- Ethnic woodwinds (subtle, traditional)
 - Low string drones
 - Oboe / cor anglais (荒野、古老、孤獨感)
 
@@ -70,8 +69,8 @@ For extra mythic/nature feel, add:
 | Section | Instruments | Character |
 |---------|-------------|-----------|
 | Intro 靜謐 | Piano, Flute/Oboe solo, Harp, Soft high strings | Intimate, natural |
-| Build up | + Cello, + French horn, + Fuller strings, + Light timpani | Growing, deepening |
-| Climax 壯闊 | Full strings, Horns + low brass, Timpani, Cymbal, Optional choir, Woodwinds doubling melody | Majestic, spiritual |
+| Build up | + Cello, + French horn, + Fuller strings, + Contrabass | Growing, deepening |
+| Climax 壯闊 | Full strings, Horns + low brass, Optional choir, Woodwinds doubling melody | Majestic, spiritual |
 
 ### Simplified Prompt Version
 ```

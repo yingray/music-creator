@@ -3,11 +3,11 @@ title: "Rachmaninoff-Style Symphony (No Solo Instrument)"
 tags: [classical, late-romantic, symphony, orchestral, russian, rachmaninoff, polyphonic]
 genre: late-romantic orchestral
 mood: expansive
-instruments: [symphony orchestra, strings, woodwinds, brass, timpani]
+instruments: [symphony orchestra, strings, woodwinds, brass]
 suno_model: v5
 use_case: classical performance, concert
 prompt: "Pure late-Romantic Russian symphony, absolute music, Rachmaninoff-inspired but fully original, full orchestral texture, lush string section, woodwind solos in dialogue, symphonic fugato, complex polyphony, post-Romantic harmony, emotional and expansive, no solo instrument, high dynamic range, non-quantized performance, sweeping melodic development, rich contrapuntal writing, noble brass chorales, deep orchestral bass, fully acoustic classical performance, natural concert hall ambience, 19th-century classical idiom, instrumental only"
-negative_prompt: "electronic, EDM, synth, synthesizer, synth pads, drum machine, drum kit, jazz drums, trap drums, pop drums, rock drums, beats, loops, groove, house, techno, trance, dubstep, hip-hop, lo-fi, jazz, swing, funk, R&B, pop, rock, cinematic trailer, hybrid orchestral, sound design, risers, impacts, booms, sub bass, sidechain, distorted bass, electric guitar, bass guitar, claps, snaps, vocal chops, choir pads, ambient electronic texture, modern production, contemporary film score, epic trailer music"
+negative_prompt: "electronic, EDM, synth, synthesizer, synth pads, drum machine, drum kit, drums, percussion, timpani, beat, rhythm, kick, snare, hi-hat, cymbal, jazz drums, trap drums, pop drums, rock drums, beats, loops, groove, house, techno, trance, dubstep, hip-hop, lo-fi, jazz, swing, funk, R&B, pop, rock, cinematic trailer, hybrid orchestral, sound design, risers, impacts, booms, sub bass, sidechain, distorted bass, electric guitar, bass guitar, claps, snaps, vocal chops, choir pads, ambient electronic texture, modern production, contemporary film score, epic trailer music"
 rating: 4
 starred: false
 created: 2026-04-06
