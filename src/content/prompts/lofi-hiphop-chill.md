@@ -7,6 +7,10 @@ instruments: [piano, vinyl crackle, drum machine, bass]
 suno_model: v5
 bpm: 85
 use_case: studying, focus background
+reference:
+  title: Nujabes
+  source_type: artist
+  note: "Leans on mellow jazz-inflected lo-fi grooves, dusty texture, and study-friendly warmth."
 prompt: "lofi hip-hop, chill study beats, 85 BPM, dusty vinyl crackle, mellow piano chords, soft drum machine, warm bass, tape saturation, jazzy, instrumental, background music for studying"
 negative_prompt: "vocals, aggressive, loud, distortion, heavy metal, screaming, EDM drop"
 rating: 5

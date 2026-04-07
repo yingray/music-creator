@@ -6,6 +6,10 @@ mood: refined
 instruments: [nylon-string classical guitar]
 suno_model: v5
 use_case: intimate recital, background listening
+reference:
+  title: Francisco Tarrega
+  source_type: artist
+  note: "Anchored in lyrical nylon-string fingerstyle with polyphonic voice leading and recital intimacy."
 prompt: "solo nylon-string classical guitar, fingerstyle only, fully instrumental, polyphonic writing with independent bass and treble voices, clear voice leading, balanced phrasing, elegant articulation, subtle rubato, warm rounded tone, intimate natural recording, classical restraint, refined and timeless, no strumming, no modern effects, traditional classical guitar idiom, solo recital"
 negative_prompt: "electronic, EDM, synth, synthesizer, drum machine, drum kit, beats, loops, pop, rock, hip-hop, electric guitar, bass guitar, steel-string guitar, strumming, vocals, singing, voice, accompaniment, orchestra, strings section, brass, piano, band, ensemble, distortion, overdrive, reverb-drenched, delay, chorus effect, flamenco, jazz, bossa nova, modern production, ambient electronic texture"
 starred: false

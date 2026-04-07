@@ -7,6 +7,10 @@ instruments: [clean electric guitar, melodic bass, drums, synthesizer]
 suno_model: v5
 bpm: 120
 use_case: focused listening, chill background
+reference:
+  title: toe
+  source_type: artist
+  note: "Anchors clean guitar math-rock precision inside restrained Japanese post-rock dynamics."
 prompt: "instrumental Japanese post-rock with subtle math rock elements, clean bright guitar arpeggios and tapping, melodic bass lines, spacious warm mix, restrained drums with ghost notes and rim clicks, gentle syncopation, slow build narrative arc, emotional and introspective, short tasteful guitar solos, short tasteful bass solos, no drum showboating, polished clean production, atmospheric yet precise, instrumental only, focused listening"
 negative_prompt: "vocals, singing, voice, heavy distortion, screaming, blast beats, double kick, metal, hardcore, aggressive, lo-fi, trap, hip-hop, EDM, classical, orchestral, acoustic folk, country, jazz fusion, shred guitar, drum solo, chaotic, noisy"
 starred: false

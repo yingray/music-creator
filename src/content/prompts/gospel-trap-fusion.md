@@ -8,6 +8,11 @@ suno_model: v5
 bpm: 140
 vocal_style: belted gospel lead, rap verses
 use_case: hype playlist
+reference:
+  title: Ultralight Beam
+  creator: Kanye West
+  source_type: work
+  note: "Blends gospel choir lift with trap 808 drum energy and verse-to-chorus contrast."
 metatags: true
 prompt: "gospel trap fusion, euphoric spiritual energy, 808 bass in key, punchy trap drums, Hammond organ, gospel choir, 140 BPM, powerful belted vocals with rap verses, hype playlist"
 negative_prompt: "acoustic, gentle, ambient, soft, lo-fi, classical, country"

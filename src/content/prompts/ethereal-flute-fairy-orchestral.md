@@ -7,6 +7,11 @@ instruments: [concert flute, harp, chamber orchestra, strings, woodwind ensemble
 suno_model: v5
 metatags: true
 use_case: animation score, fantasy scene
+reference:
+  title: The Tale of the Princess Kaguya
+  creator: Joe Hisaishi
+  source_type: work
+  note: "Uses delicate flute-harp chamber textures and luminous fairy-tale orchestral color."
 prompt: "ethereal flute solo opening, arpeggiated harp, chamber orchestra, Impressionism, magical forest atmosphere, whimsical and delicate, light transparent strings, glissando textures, dreamy woodwind ensemble, fairy-like graceful character, soft pizzicato, pastoral elegance, secret realm atmosphere, gentle orchestral swell, organic acoustic orchestration, Impressionist-era harmonic color, instrumental only"
 negative_prompt: "electronic, EDM, synth, synthesizer, synth pads, drum machine, drum kit, jazz drums, trap drums, pop drums, rock drums, beats, loops, groove, house, techno, trance, dubstep, hip-hop, lo-fi, jazz, swing, funk, R&B, pop, rock, cinematic trailer, hybrid orchestral, sound design, risers, impacts, booms, sub bass, sidechain, distorted bass, electric guitar, bass guitar, claps, snaps, vocal chops, choir pads, ambient electronic texture, modern production, contemporary film score, epic trailer music, heavy percussion, brass fanfare, timpani, aggressive, dark, ominous"
 rating: 4

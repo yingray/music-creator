@@ -6,6 +6,10 @@ mood: stately
 instruments: [cello, piano]
 suno_model: v5
 use_case: chamber recital, intellectual listening
+reference:
+  title: Johann Sebastian Bach
+  source_type: artist
+  note: "Modeled on strict Baroque two-voice counterpoint and transparent chamber articulation."
 prompt: "Baroque cello sonata, piano counterpoint, fugue-like dialogue between cello and piano, Neoclassical sensibility, intricate polyphony, stately and intellectual, precise articulation, clean transparent texture, absolute music, 18th-century contrapuntal structure, balanced voices, ornamental melodic lines, harpsichord-like piano touch, fully acoustic chamber performance, natural room ambience, instrumental only"
 negative_prompt: "electronic, EDM, synth, synthesizer, drum machine, drum kit, beats, loops, pop, rock, hip-hop, lo-fi, jazz, swing, funk, R&B, cinematic trailer, hybrid orchestral, sound design, risers, impacts, booms, sub bass, electric guitar, bass guitar, orchestra, full strings, brass section, timpani, choir, lush romantic, heavy vibrato, rubato, sentimental, modern production, ambient electronic texture, contemporary film score, epic trailer music, reverb-drenched"
 starred: false

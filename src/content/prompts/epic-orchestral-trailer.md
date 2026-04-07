@@ -7,6 +7,11 @@ instruments: [orchestra, brass, timpani, choir, strings]
 suno_model: v5
 bpm: 140
 use_case: trailer, cinematic
+reference:
+  title: Inception
+  creator: Hans Zimmer
+  source_type: work
+  note: "Targets modern trailer arcs with rising orchestral tension, heavy percussion impact, and heroic release."
 metatags: true
 prompt: "epic orchestral trailer music, dramatic heroic energy, 140 BPM, French horn melody, thundering timpani, taiko drums, soaring strings, dramatic choir, cinematic percussion, instrumental, trailer background"
 negative_prompt: "electronic, synth, acoustic guitar, vocals, gentle, soft, ambient, lo-fi"

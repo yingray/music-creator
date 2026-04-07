@@ -17,6 +17,11 @@ const { Content } = await render(prompt);
 const { data } = prompt;
 const ratingStars = data.rating ? "★".repeat(data.rating) + "☆".repeat(5 - data.rating) : "";
 const promptsHref = withBase("/prompts/");
+const referenceTypeLabel =
+  data.reference.source_type.charAt(0).toUpperCase() + data.reference.source_type.slice(1);
+const referenceSummary = data.reference.creator
+  ? `${data.reference.title} · ${data.reference.creator}`
+  : data.reference.title;
 ---
 
 <BaseLayout title={data.title}>
@@ -123,6 +128,14 @@ const promptsHref = withBase("/prompts/");
             <p class="text-text-secondary mt-1">{data.use_case}</p>
           </div>
         )}
+        <div class="col-span-2">
+          <span class="text-text-muted">Reference</span>
+          <p class="text-text-secondary mt-1">{referenceSummary}</p>
+          <p class="text-text-muted text-xs mt-1">{referenceTypeLabel}</p>
+          {data.reference.note && (
+            <p class="text-text-secondary text-xs mt-1">{data.reference.note}</p>
+          )}
+        </div>
         {data.suno_url && (
           <div class="col-span-2">
             <span class="text-text-muted">Suno Link</span>

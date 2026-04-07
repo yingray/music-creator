@@ -6,6 +6,11 @@ mood: intellectual
 instruments: [symphony orchestra, violins, woodwinds, strings, brass]
 suno_model: v5
 use_case: classical performance, concert
+reference:
+  title: "Symphony No. 1 'Classical'"
+  creator: Sergei Prokofiev
+  source_type: work
+  note: "Centers neoclassical balance, contrapuntal clarity, and formal symphonic discipline."
 prompt: "Neoclassical contrapuntal symphony, sophisticated orchestral writing, intricate woodwind dialogues, elegant violin melodies, intellectual and structured, Baroque-Romantic hybrid character, detailed polyphonic texture, expansive harmonic development, rich contrapuntal interplay, clear voice leading across sections, balanced orchestration, dignified and refined, fully acoustic classical performance, natural concert hall ambience, traditional symphonic form, instrumental only"
 negative_prompt: "electronic, EDM, synth, synthesizer, synth pads, drum machine, drum kit, jazz drums, trap drums, pop drums, rock drums, beats, loops, groove, house, techno, trance, dubstep, hip-hop, lo-fi, jazz, swing, funk, R&B, pop, rock, cinematic trailer, hybrid orchestral, sound design, risers, impacts, booms, sub bass, sidechain, distorted bass, electric guitar, bass guitar, claps, snaps, vocal chops, choir pads, ambient electronic texture, modern production, contemporary film score, epic trailer music"
 starred: false

@@ -6,6 +6,10 @@ mood: lyrical
 instruments: [concert grand piano, strings, woodwinds, horn]
 suno_model: v5
 use_case: classical performance, concert
+reference:
+  title: Sergei Rachmaninoff
+  source_type: artist
+  note: "Anchors lyrical adagio cantabile writing with warm chromatic late-Romantic harmony."
 prompt: "Pure late-Romantic Russian piano concerto, second movement, adagio sostenuto, deeply lyrical and introspective, Rachmaninoff-inspired but fully original, singing concert grand piano, soft pedal piano warmth, warm strings, delicate woodwinds, expressive cantabile melodies, poetic noble atmosphere, spacious phrasing, refined rubato, rich romantic harmony, sophisticated chromaticism, intricate inner melodies, gentle orchestral swell, intimate dialogue between piano and orchestra, serene yet emotionally profound, luminous harmonic color, fully acoustic classical performance, natural concert hall ambience, 19th-century classical idiom, instrumental only"
 negative_prompt: "electronic, EDM, synth, synthesizer, synth pads, drum machine, drum kit, jazz drums, trap drums, pop drums, rock drums, beats, loops, groove, house, techno, trance, dubstep, hip-hop, lo-fi, jazz, swing, funk, R&B, pop, rock, cinematic trailer, hybrid orchestral, sound design, risers, impacts, booms, sub bass, sidechain, distorted bass, electric guitar, bass guitar, claps, snaps, vocal chops, choir pads, ambient electronic texture, modern production, contemporary film score, epic trailer music"
 rating: 4

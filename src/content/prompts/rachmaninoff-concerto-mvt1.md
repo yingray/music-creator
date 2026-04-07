@@ -6,6 +6,10 @@ mood: grand-melancholic
 instruments: [concert grand piano, symphony orchestra, strings, brass, woodwinds]
 suno_model: v5
 use_case: classical performance, concert
+reference:
+  title: Sergei Rachmaninoff
+  source_type: artist
+  note: "Anchors grand late-Romantic concerto drama with virtuosic piano-orchestra conflict."
 prompt: "Pure late-Romantic Russian piano concerto, first movement, Rachmaninoff-inspired but fully original, grand passionate opening, virtuosic concert grand piano, full symphony orchestra, sweeping strings, noble brass, expressive woodwinds, dramatic orchestral tuttis, stormy momentum, rich chromatic harmony, intricate counterpoint, minor key, large-scale sonata form feeling, intense dialogue between solo piano and orchestra, melancholic power, dramatic crescendo, high dynamic range, serious, majestic, fully acoustic classical performance, natural concert hall ambience, 19th-century classical idiom, instrumental only"
 negative_prompt: "electronic, EDM, synth, synthesizer, synth pads, drum machine, drum kit, jazz drums, trap drums, pop drums, rock drums, beats, loops, groove, house, techno, trance, dubstep, hip-hop, lo-fi, jazz, swing, funk, R&B, pop, rock, cinematic trailer, hybrid orchestral, sound design, risers, impacts, booms, sub bass, sidechain, distorted bass, electric guitar, bass guitar, claps, snaps, vocal chops, choir pads, ambient electronic texture, modern production, contemporary film score, epic trailer music"
 rating: 4

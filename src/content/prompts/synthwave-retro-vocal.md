@@ -8,6 +8,11 @@ suno_model: v5
 bpm: 96
 vocal_style: ethereal, reverb-heavy
 use_case: driving playlist
+reference:
+  title: "Drive (2011) soundtrack"
+  creator: Cliff Martinez
+  source_type: work
+  note: "Targets late-80s inspired neon synth textures and nostalgic night-drive vocal mood."
 metatags: true
 prompt: "synthwave, nostalgic night-drive atmosphere, late 80s analog synth, Juno pads, gated snares, deep bass, 96 BPM, soft dream-pop vocal, driving playlist"
 negative_prompt: "acoustic, folk, country, bright, happy, modern pop production"

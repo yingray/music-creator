@@ -8,6 +8,10 @@ suno_model: v5
 bpm: 108
 vocal_style: warm female vocal
 use_case: content creation background
+reference:
+  title: Maggie Rogers
+  source_type: artist
+  note: "Targets warm uplifting indie-pop vocals with airy modern pop instrumentation."
 metatags: true
 prompt: "indie pop, warm uplifting energy, acoustic guitar, airy synth pad, light crisp drums, 108 BPM, warm female vocal, content creation background"
 negative_prompt: "metal, aggressive, screaming, heavy distortion, dark, rap"

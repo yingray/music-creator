@@ -15,6 +15,12 @@ const prompts = defineCollection({
     bpm: z.number().min(20).max(300).optional(),
     vocal_style: z.string().optional(),
     use_case: z.string().optional(),
+    reference: z.object({
+      title: z.string(),
+      creator: z.string().optional(),
+      source_type: z.enum(["work", "artist", "franchise"]),
+      note: z.string().optional(),
+    }),
     metatags: z.boolean().default(false),
     rating: z.number().min(1).max(5).optional(),
     starred: z.boolean().default(false),

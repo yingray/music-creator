@@ -7,6 +7,10 @@ instruments: [synth, strings, pad, sub-bass]
 suno_model: v5
 bpm: 60
 use_case: dark scene background, meditation
+reference:
+  title: Trent Reznor & Atticus Ross
+  source_type: artist
+  note: "Targets slow-burning cinematic drones, low-end tension, and evolving dark ambience."
 prompt: "dark ambient cinematic, haunting atmosphere, 60 BPM, ethereal pads, deep sub-bass, distant strings, slow evolving textures, reverb-drenched, instrumental, dark scene background"
 negative_prompt: "vocals, upbeat, drums, happy, bright, acoustic guitar, fast tempo"
 rating: 4

@@ -6,6 +6,11 @@ mood: exuberant
 instruments: [concert grand piano, solo clarinet, saxophone section, muted trumpet, strings, brass, woodwinds, timpani]
 suno_model: v5
 use_case: classical-jazz crossover, concert performance
+reference:
+  title: Rhapsody in Blue
+  creator: George Gershwin
+  source_type: work
+  note: "Adapts Jazz Age episodic form, clarinet glissando character, and piano-orchestra dialogue."
 prompt: "Symphonic jazz concert rhapsody, Gershwin-inspired but fully original, 1920s American Jazz Age, free clarinet glissando intro -> snapped syncopated piano-and-orchestra episodes -> broad singing lyrical theme -> virtuosic piano cadenza -> blazing final tutti, concert grand piano in conversational dialogue with orchestra, solo clarinet, saxophone section, muted trumpet color, crisp brass punches, playful woodwind exchanges, blues-inflected extended harmony, blue thirds and sevenths, stride-inflected piano flourishes, elastic rubato transitions, urban swagger, exuberant but refined, restrained timpani accents, fully acoustic concert performance, natural concert hall ambience, early 20th-century American symphonic idiom, instrumental only"
 negative_prompt: "vocals, singing, voice, scat singing, spoken word, electronic, EDM, synth, synthesizer, synth pads, drum machine, drum kit, jazz drum kit, trap drums, pop drums, rock drums, beat, kick, snare, hi-hat, loops, house, techno, trance, dubstep, hip-hop, lo-fi, funk, R&B, pop, rock, cinematic trailer, hybrid orchestral, sound design, risers, impacts, booms, sub bass, sidechain, distorted bass, electric guitar, bass guitar, claps, snaps, vocal chops, choir pads, ambient electronic texture, modern production, contemporary film score, epic trailer music, bebop, free jazz, smooth jazz, fusion jazz, big band, lounge jazz"
 starred: false

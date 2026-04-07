@@ -6,6 +6,11 @@ mood: serene-to-epic
 instruments: [piano, flute, oboe, harp, strings, french horn]
 suno_model: v5
 use_case: animation score, cinematic
+reference:
+  title: Princess Mononoke
+  creator: Joe Hisaishi
+  source_type: work
+  note: "Layered orchestral build from intimate nature motifs into majestic symphonic climax."
 metatags: true
 prompt: "orchestral fantasy in a natural mythic style, serene then expansive, intimate piano opening, lyrical woodwinds, harp glimmers, transparent string writing, gradual symphonic build, warm French horns, sweeping strings, spiritual and majestic, organic acoustic orchestration, instrumental, animation score"
 negative_prompt: "electronic, synth, synthesizer, drum machine, drum kit, drums, percussion, timpani, beat, rhythm, kick, snare, hi-hat, cymbal, marching, trap, EDM, dubstep, electric guitar, bass guitar, modern trailer, hybrid orchestral, risers, impacts, booms, sub bass, beats, loops, pop, rock, hip-hop, lo-fi, distortion, heavy percussion"

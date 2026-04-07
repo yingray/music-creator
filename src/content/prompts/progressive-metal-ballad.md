@@ -8,6 +8,10 @@ suno_model: v5
 bpm: 80
 vocal_style: powerful emotional male vocal
 use_case: epic playlist, emotional listening
+reference:
+  title: Dream Theater
+  source_type: artist
+  note: "Follows cinematic prog-metal ballad arcs with virtuosic shifts and emotional vocal peaks."
 metatags: true
 prompt: "symphonic progressive metal ballad, soaring and emotional with cinematic flair, grand piano foundation, layered electric guitar with soaring solos, expressive violin melodies, complex time signatures, virtuosic instrumentation, 80 BPM building to intensity, uplifting and powerful, intricate arrangements, 70s prog rock influence, wide dynamic range, polished studio production, powerful emotional male vocal, epic playlist"
 negative_prompt: "lo-fi, acoustic folk, country, gentle ambient, minimalist, simple, repetitive, trap, hip-hop, EDM drop, dubstep, reggae, jazz, bossa nova, classical-only, whispered vocal, rap"
